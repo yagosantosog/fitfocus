@@ -1,4 +1,5 @@
 <script setup>
+import Grid from "../Grid.vue";
 import { gymHealthFacts } from "../../utils";
 const randomNumber = Math.floor(Math.random() * gymHealthFacts.length);
 const todaysFact = gymHealthFacts[randomNumber];
@@ -13,6 +14,7 @@ const todaysFact = gymHealthFacts[randomNumber];
       </div>
       <button>Start workout &rarr;</button>
     </div>
+    <Grid />
   </section>
 </template>
 
