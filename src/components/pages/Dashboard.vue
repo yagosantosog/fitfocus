@@ -18,4 +18,29 @@ const todaysFact = gymHealthFacts[randomNumber];
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.tip-container,
+.tip-container div,
+#dashboard {
+  display: flex;
+}
+
+.tip-container,
+#dashboard {
+  flex-direction: column;
+}
+
+#dashboard {
+  gap: 2rem;
+}
+
+.tip-container {
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .tip-container {
+    gap: 1rem;
+  }
+}
+</style>
