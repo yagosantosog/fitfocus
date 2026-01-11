@@ -11,6 +11,7 @@ const todaysFact = gymHealthFacts[randomNumber];
       <div>
         <p class="tip"><strong>Daily Tip</strong><br />{{ todaysFact }}</p>
       </div>
+      <button>Start workout &rarr;</button>
     </div>
   </section>
 </template>
