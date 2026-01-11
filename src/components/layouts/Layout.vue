@@ -13,6 +13,7 @@
         alt="profile picture"
       />
       <p>yagosantosog</p>
+      <i class="fa-brands fa-github"></i>
     </a>
   </footer>
 </template>
