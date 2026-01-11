@@ -32,7 +32,7 @@ footer {
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-  padding: 3rem 0 4rem 0;
+  padding: 2rem 0 3rem 0;
 }
 
 footer a {
