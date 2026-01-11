@@ -17,4 +17,44 @@
   </footer>
 </template>
 
-<style scoped></style>
+<style scoped>
+header,
+main,
+footer {
+  padding: 1rem;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 3rem 0 4rem 0;
+}
+
+footer a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem;
+  padding-right: 0.5rem;
+  background: var(--background-muted);
+  border-radius: 4rem;
+  border: 1px solid transparent;
+  transition-duration: 200ms;
+  text-decoration: none;
+}
+
+footer a:hover {
+  border-color: var(--color-link);
+}
+
+footer a img {
+  max-width: 30px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+}
+</style>
