@@ -16,4 +16,13 @@
   </Teleport>
 </template>
 
-<style scoped></style>
+<style scoped>
+.portal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1001;
+}
+</style>
