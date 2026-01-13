@@ -25,4 +25,14 @@
   height: 100vh;
   z-index: 1001;
 }
+
+.portal-underlay {
+  position: absolute;
+  inset: 0;
+  background: var(--background-primary);
+  opacity: 0.7;
+  z-index: 999;
+  border: none;
+  padding: none;
+}
 </style>
