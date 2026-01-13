@@ -44,11 +44,78 @@ const { workout, warmup } = workoutProgram[selectedWorkout];
         <input class="grid-weights" placeholder="14kg" type="text" />
       </div>
     </div>
-    <div class="card">
+    <div class="card workout-btns">
       <button>Save & Exit <i class="fa-solid fa-save"></i></button>
       <button>Complete <i class="fa-solid fa-check"></i></button>
     </div>
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+#workout-card,
+.plan-card {
+  display: flex;
+  flex-direction: column;
+}
+
+#workout-card {
+  gap: 1.5rem;
+}
+
+.plan-card-header,
+.workout-btns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.workout-grid,
+.workout-grid-row {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.workout-grid-row,
+.workout-grid-line {
+  grid-column: span 7 / span 7;
+}
+
+.grid-name {
+  grid-column: span 3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.grid-name p {
+  text-transform: capitalize;
+}
+
+.grid-name button {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.grid-name button:hover {
+  transform: none;
+  box-shadow: none;
+  color: var(--color-link);
+}
+
+.workout-grid-row .grid-name button {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.workout-grid-row:hover .grid-name button {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.grid-weights {
+  grid-column: span 2;
+}
+</style>
