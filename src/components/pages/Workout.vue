@@ -9,8 +9,14 @@ const exerciseDescription = exerciseDescriptions[selectedExercise];
 
 <template>
   <Portal>
-    <h4>{{ selectedExercise }}</h4>
-    <p>{{ exerciseDescription }}</p>
+    <div class="exercise-description">
+      <h4>{{ selectedExercise }}</h4>
+      <div>
+        <small>Description</small>
+        <p>{{ exerciseDescription }}</p>
+      </div>
+      <button>Close <i class="fa-solid fa-xmark"></i></button>
+    </div>
   </Portal>
   <section id="workout-card">
     <div class="plan-card card">
@@ -124,5 +130,15 @@ const exerciseDescription = exerciseDescriptions[selectedExercise];
 
 .grid-weights {
   grid-column: span 2;
+}
+
+.exercise-description {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exercise-description button i {
+  padding-left: 0.5rem;
 }
 </style>
