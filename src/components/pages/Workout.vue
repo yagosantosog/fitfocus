@@ -1,10 +1,17 @@
 <script setup>
-import { workoutProgram } from "../../utils";
+import { workoutProgram, exerciseDescriptions } from "../../utils";
+import Portal from "../Portal.vue";
 const selectedWorkout = 4;
 const { workout, warmup } = workoutProgram[selectedWorkout];
+const selectedExercise = "Lat pull down";
+const exerciseDescription = exerciseDescriptions[selectedExercise];
 </script>
 
 <template>
+  <Portal>
+    <h4>{{ selectedExercise }}</h4>
+    <p>{{ exerciseDescription }}</p>
+  </Portal>
   <section id="workout-card">
     <div class="plan-card card">
       <div class="plan-card-header">
