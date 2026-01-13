@@ -35,4 +35,21 @@
   border: none;
   padding: none;
 }
+
+.portal-content {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  max-width: 90vw;
+  max-height: 80vh;
+  display: grid;
+  place-items: center;
+  background: var(--background-primary);
+  border-radius: var(--border-radius-small);
+  padding: 1rem;
+  border: 1px solid var(--background-muted);
+}
 </style>
