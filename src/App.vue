@@ -19,6 +19,10 @@ for (let workoutIdx in workoutProgram) {
 const selectedDisplay = ref(2);
 const data = ref(defaultData);
 const selectedWorkout = ref(2);
+
+function handleChangeDisplay(idx) {
+  selectedDisplay.value = idx;
+}
 </script>
 
 <template>
