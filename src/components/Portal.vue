@@ -1,4 +1,8 @@
-<script setup></script>
+<script setup>
+const props = defineProps({
+  handleClosePortal: Function,
+});
+</script>
 
 <template>
   <Teleport to="#portal">
@@ -6,7 +10,7 @@
       <div
         role="button"
         tabindex="0"
-        @click="() => {}"
+        @click="props.handleClosePortal"
         class="portal-underlay"
       ></div>
       <div class="portal-content">
