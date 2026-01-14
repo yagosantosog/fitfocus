@@ -23,6 +23,11 @@ const selectedWorkout = ref(2);
 function handleChangeDisplay(idx) {
   selectedDisplay.value = idx;
 }
+
+function handleSelectedWorkout(idx) {
+  selectedDisplay.value = 2;
+  selectedWorkout.value = idx;
+}
 </script>
 
 <template>
