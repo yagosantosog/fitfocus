@@ -2,6 +2,12 @@
 import { computed, ref } from "vue";
 import { workoutProgram, exerciseDescriptions } from "../../utils";
 import Portal from "../Portal.vue";
+
+const props = defineProps({
+  data: Object,
+  selectedWorkout: Number,
+});
+
 const selectedWorkout = 4;
 const { workout, warmup } = workoutProgram[selectedWorkout];
 let selectedExercise = ref(null);

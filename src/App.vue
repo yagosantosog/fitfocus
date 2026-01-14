@@ -16,7 +16,7 @@ for (let workoutIdx in workoutProgram) {
     defaultData[workoutIdx][e.name] = "";
   }
 }
-const selectedDisplay = ref(2);
+const selectedDisplay = ref(1);
 const data = ref(defaultData);
 const selectedWorkout = ref(-1);
 </script>
@@ -28,7 +28,7 @@ const selectedWorkout = ref(-1);
     <Workout
       :data="data"
       :selectedWorkout="selectedWorkout"
-      v-if="selectedDisplay == 2"
+      v-if="workoutProgram?.[selectedWorkout]"
     />
   </Layout>
 </template>
