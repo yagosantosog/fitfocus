@@ -1,11 +1,13 @@
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { workoutProgram, exerciseDescriptions } from "../../utils";
 import Portal from "../Portal.vue";
 const selectedWorkout = 4;
 const { workout, warmup } = workoutProgram[selectedWorkout];
 let selectedExercise = ref(null);
-const exerciseDescription = exerciseDescriptions[selectedExercise];
+const exerciseDescription = computed(
+  () => exerciseDescriptions[selectedExercise.value]
+);
 
 function handleCloseModal() {
   selectedExercise.value = null;
@@ -15,7 +17,7 @@ function handleCloseModal() {
 <template>
   <Portal v-if="selectedExercise">
     <div class="exercise-description">
-      <h4>{{ selectedExercise }}</h4>
+      <h3>{{ selectedExercise }}</h3>
       <div>
         <small>Description</small>
         <p>{{ exerciseDescription }}</p>
@@ -160,6 +162,10 @@ function handleCloseModal() {
   flex-direction: column;
   gap: 1rem;
   width: 100%;
+}
+
+.exercise-description h3 {
+  text-transform: capitalize;
 }
 
 .exercise-description button i {
