@@ -16,9 +16,9 @@ for (let workoutIdx in workoutProgram) {
     defaultData[workoutIdx][e.name] = "";
   }
 }
-const selectedDisplay = ref(2);
+const selectedDisplay = ref(0);
 const data = ref(defaultData);
-const selectedWorkout = ref(2);
+const selectedWorkout = ref(-1);
 
 function handleChangeDisplay(idx) {
   selectedDisplay.value = idx;
@@ -27,6 +27,17 @@ function handleChangeDisplay(idx) {
 function handleSelectedWorkout(idx) {
   selectedDisplay.value = 2;
   selectedWorkout.value = idx;
+}
+
+function handleSaveWorkout() {
+  // save the current data snapshot to localstorage so that we can retrieve it next time
+  localStorage.setItem("workouts", JSON.stringify(data.value));
+
+  // show the dashboard
+  selectedDisplay.value = 1;
+
+  // deselect a workout
+  selectedWorkout.value = -1;
 }
 </script>
 
