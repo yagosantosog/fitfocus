@@ -159,6 +159,7 @@ function handleCloseModal() {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 .exercise-description button i {
