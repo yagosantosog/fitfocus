@@ -1,21 +1,28 @@
 <script setup>
+import { ref } from "vue";
 import { workoutProgram, exerciseDescriptions } from "../../utils";
 import Portal from "../Portal.vue";
 const selectedWorkout = 4;
 const { workout, warmup } = workoutProgram[selectedWorkout];
-const selectedExercise = "Lat pull down";
+let selectedExercise = ref(null);
 const exerciseDescription = exerciseDescriptions[selectedExercise];
+
+function handleCloseModal() {
+  selectedExercise.value = null;
+}
 </script>
 
 <template>
-  <Portal>
+  <Portal v-if="selectedExercise">
     <div class="exercise-description">
       <h4>{{ selectedExercise }}</h4>
       <div>
         <small>Description</small>
         <p>{{ exerciseDescription }}</p>
       </div>
-      <button>Close <i class="fa-solid fa-xmark"></i></button>
+      <button @click="handleCloseModal">
+        Close <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
   </Portal>
   <section id="workout-card">
@@ -37,7 +44,15 @@ const exerciseDescription = exerciseDescriptions[selectedExercise];
       <div class="workout-grid-row" v-for="(w, wIdx) in warmup" :key="wIdx">
         <div class="grid-name">
           <p>{{ w.name }}</p>
-          <button><i class="fa-regular fa-circle-question"></i></button>
+          <button
+            @click="
+              () => {
+                selectedExercise = w.name;
+              }
+            "
+          >
+            <i class="fa-regular fa-circle-question"></i>
+          </button>
         </div>
         <p>{{ w.sets }}</p>
         <p>{{ w.reps }}</p>
@@ -50,7 +65,15 @@ const exerciseDescription = exerciseDescriptions[selectedExercise];
       <div class="workout-grid-row" v-for="(w, wIdx) in workout" :key="wIdx">
         <div class="grid-name">
           <p>{{ w.name }}</p>
-          <button><i class="fa-regular fa-circle-question"></i></button>
+          <button
+            @click="
+              () => {
+                selectedExercise = w.name;
+              }
+            "
+          >
+            <i class="fa-regular fa-circle-question"></i>
+          </button>
         </div>
         <p>{{ w.sets }}</p>
         <p>{{ w.reps }}</p>
