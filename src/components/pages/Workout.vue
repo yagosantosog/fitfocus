@@ -85,7 +85,12 @@ function handleCloseModal() {
         </div>
         <p>{{ w.sets }}</p>
         <p>{{ w.reps }}</p>
-        <input class="grid-weights" placeholder="14kg" type="text" />
+        <input
+          v-model="data[selectedWorkout][w.name]"
+          class="grid-weights"
+          placeholder="14kg"
+          type="text"
+        />
       </div>
     </div>
     <div class="card workout-btns">

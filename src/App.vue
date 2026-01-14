@@ -16,9 +16,9 @@ for (let workoutIdx in workoutProgram) {
     defaultData[workoutIdx][e.name] = "";
   }
 }
-const selectedDisplay = ref(1);
+const selectedDisplay = ref(2);
 const data = ref(defaultData);
-const selectedWorkout = ref(-1);
+const selectedWorkout = ref(2);
 </script>
 
 <template>
