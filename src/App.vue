@@ -43,7 +43,10 @@ function handleSaveWorkout() {
 
 <template>
   <Layout>
-    <Welcome v-if="selectedDisplay == 0" />
+    <Welcome
+      :handleChangeDisplay="handleChangeDisplay"
+      v-if="selectedDisplay == 0"
+    />
     <Dashboard v-if="selectedDisplay == 1" />
     <Workout
       :data="data"
