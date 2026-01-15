@@ -39,7 +39,7 @@ const firstIncompleteWorkoutIndex = computed(() => {
   for (const [index, workout] of Object.entries(allWorkouts)) {
     const isComplete = Object.values(workout).every((ex) => !!ex);
     if (!isComplete) {
-      return index;
+      return parseInt(index);
     }
   }
   return -1;

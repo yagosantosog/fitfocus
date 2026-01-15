@@ -41,8 +41,8 @@ function handleCloseModal() {
           Day
           {{
             props.selectedWorkout < 9
-              ? "0" + selectedWorkout
-              : props.selectedWorkout
+              ? "0" + (props.selectedWorkout + 1)
+              : props.selectedWorkout + 1
           }}
         </p>
         <i class="fa-solid fa-dumbbell"></i>
