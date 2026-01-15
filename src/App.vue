@@ -73,6 +73,7 @@ function handleSaveWorkout() {
       v-if="selectedDisplay == 0"
     />
     <Dashboard
+      :firstIncompleteWorkoutIndex="firstIncompleteWorkoutIndex"
       :handleSelectedWorkout="handleSelectedWorkout"
       v-if="selectedDisplay == 1"
     />
