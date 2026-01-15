@@ -77,6 +77,8 @@ function handleSaveWorkout() {
       v-if="selectedDisplay == 1"
     />
     <Workout
+      :handleSaveWorkout="handleSaveWorkout"
+      :isWorkoutComplete="isWorkoutComplete"
       :data="data"
       :selectedWorkout="selectedWorkout"
       v-if="workoutProgram?.[selectedWorkout]"
