@@ -4,7 +4,7 @@ import Welcome from "./components/pages/Welcome.vue";
 import Dashboard from "./components/pages/Dashboard.vue";
 import Workout from "./components/pages/Workout.vue";
 import { workoutProgram } from "./utils";
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 
 const defaultData = {};
 for (let workoutIdx in workoutProgram) {
@@ -66,11 +66,20 @@ function handleSaveWorkout() {
 }
 
 function handleResetPlan() {
-  selectedDisplay.value = 2;
+  selectedDisplay.value = 1;
   selectedWorkout.value = -1;
   data.value = defaultData;
   localStorage.removeItem("workouts");
 }
+
+onMounted(() => {
+  if (!localStorage) return;
+  if (localStorage.getItem("workouts")) {
+    const savedData = JSON.parse(localStorage.getItem("workouts"));
+    data.value = savedData;
+    selectedDisplay.value = 1;
+  }
+});
 </script>
 
 <template>
