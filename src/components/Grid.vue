@@ -1,11 +1,18 @@
 <script setup>
 import { workoutProgram } from "../utils";
+
+const props = defineProps({
+  handleSelectedWorkout: Function,
+});
+
 const workoutTypes = ["Push", "Pull", "Legs"];
 </script>
 
 <template>
   <section id="grid">
     <button
+      disabled=""
+      @click="() => handleSelectedWorkout(workoutIdx)"
       :key="workoutIdx"
       v-for="(workout, workoutIdx) in Object.keys(workoutProgram)"
       class="button plan-card"
@@ -32,6 +39,11 @@ const workoutTypes = ["Push", "Pull", "Legs"];
 
 #grid button {
   width: 100%;
+}
+
+#grid button:disabled {
+  box-shadow: none;
+  cursor: not-allowed;
 }
 
 .plan-card {

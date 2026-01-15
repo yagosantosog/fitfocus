@@ -8,8 +8,7 @@ const props = defineProps({
   selectedWorkout: Number,
 });
 
-const selectedWorkout = 4;
-const { workout, warmup } = workoutProgram[selectedWorkout];
+const { workout, warmup } = workoutProgram[props.selectedWorkout];
 let selectedExercise = ref(null);
 const exerciseDescription = computed(
   () => exerciseDescriptions[selectedExercise.value]
@@ -38,7 +37,11 @@ function handleCloseModal() {
       <div class="plan-card-header">
         <p>
           Day
-          {{ selectedWorkout < 9 ? "0" + selectedWorkout : selectedWorkout }}
+          {{
+            props.selectedWorkout < 9
+              ? "0" + selectedWorkout
+              : props.selectedWorkout
+          }}
         </p>
         <i class="fa-solid fa-dumbbell"></i>
       </div>
@@ -86,7 +89,7 @@ function handleCloseModal() {
         <p>{{ w.sets }}</p>
         <p>{{ w.reps }}</p>
         <input
-          v-model="data[selectedWorkout][w.name]"
+          v-model="data[props.selectedWorkout][w.name]"
           class="grid-weights"
           placeholder="14kg"
           type="text"
