@@ -103,7 +103,7 @@ function handleCloseModal() {
         Save & Exit <i class="fa-solid fa-save"></i>
       </button>
       <button
-        :disabled="props.isWorkoutComplete"
+        :disabled="!props.isWorkoutComplete"
         @click="props.handleSaveWorkout"
       >
         Complete <i class="fa-solid fa-check"></i>
