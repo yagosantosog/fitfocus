@@ -99,10 +99,13 @@ function handleCloseModal() {
       </div>
     </div>
     <div class="card workout-btns">
-      <button @click="handleSaveWorkout">
+      <button @click="props.handleSaveWorkout">
         Save & Exit <i class="fa-solid fa-save"></i>
       </button>
-      <button :disabled="isWorkoutComplete" @click="handleSaveWorkout">
+      <button
+        :disabled="props.isWorkoutComplete"
+        @click="props.handleSaveWorkout"
+      >
         Complete <i class="fa-solid fa-check"></i>
       </button>
     </div>
