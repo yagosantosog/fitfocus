@@ -5,6 +5,7 @@ import { gymHealthFacts } from "../../utils";
 const props = defineProps({
   handleSelectedWorkout: Function,
   firstIncompleteWorkoutIndex: Number,
+  handleResetPlan: Function,
 });
 
 const randomNumber = Math.floor(Math.random() * gymHealthFacts.length);

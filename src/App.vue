@@ -64,6 +64,13 @@ function handleSaveWorkout() {
   // deselect a workout
   selectedWorkout.value = -1;
 }
+
+function handleResetPlan() {
+  selectedDisplay.value = 2;
+  selectedWorkout.value = -1;
+  data.value = defaultData;
+  localStorage.removeItem("workouts");
+}
 </script>
 
 <template>
@@ -73,6 +80,7 @@ function handleSaveWorkout() {
       v-if="selectedDisplay == 0"
     />
     <Dashboard
+      :handleResetPlan="handleResetPlan"
       :firstIncompleteWorkoutIndex="firstIncompleteWorkoutIndex"
       :handleSelectedWorkout="handleSelectedWorkout"
       v-if="selectedDisplay == 1"
