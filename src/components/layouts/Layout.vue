@@ -1,7 +1,12 @@
-<script setup></script>
+<script setup>
+import ThemeToggle from "../ThemeToggle.vue";
+</script>
 
 <template>
-  <header><h1 class="text-gradient">FitFocus</h1></header>
+  <header>
+    <h1 class="text-gradient">FitFocus</h1>
+    <theme-toggle />
+  </header>
   <main>
     <slot />
   </main>
@@ -26,6 +31,13 @@ footer {
   width: 100%;
   max-width: 700px;
   margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 footer {
