@@ -51,6 +51,7 @@ header {
   padding: 0;
   box-shadow: none;
   transform: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 footer {
