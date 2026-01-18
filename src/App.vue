@@ -72,6 +72,11 @@ function handleResetPlan() {
   localStorage.removeItem("workouts");
 }
 
+function goHome() {
+  selectedDisplay.value = 0;
+  selectedWorkout.value = -1;
+}
+
 onMounted(() => {
   if (!localStorage) return;
   if (localStorage.getItem("workouts")) {
@@ -83,7 +88,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <Layout>
+  <Layout @goHome="goHome">
     <Welcome
       :handleChangeDisplay="handleChangeDisplay"
       v-if="selectedDisplay == 0"

@@ -1,10 +1,14 @@
 <script setup>
 import ThemeToggle from "../ThemeToggle.vue";
+
+const emit = defineEmits(["goHome"]);
 </script>
 
 <template>
   <header>
-    <h1 class="text-gradient">FitFocus</h1>
+    <button class="logo-btn" @click="emit('goHome')">
+      <h1 class="text-gradient">FitFocus</h1>
+    </button>
     <theme-toggle />
   </header>
   <main>
@@ -38,6 +42,15 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+
+.logo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-shadow: none;
+  transform: none;
 }
 
 footer {
