@@ -77,6 +77,15 @@ function goHome() {
   selectedWorkout.value = -1;
 }
 
+function handleGoBack() {
+  if (selectedDisplay.value === 2) {
+    selectedDisplay.value = 1;
+    selectedWorkout.value = -1;
+  } else {
+    selectedDisplay.value -= 1;
+  }
+}
+
 onMounted(() => {
   if (!localStorage) return;
   if (localStorage.getItem("workouts")) {
@@ -100,6 +109,7 @@ onMounted(() => {
       v-if="selectedDisplay == 1"
     />
     <Workout
+      @goBack="handleGoBack"
       :handleSaveWorkout="handleSaveWorkout"
       :isWorkoutComplete="isWorkoutComplete"
       :data="data"

@@ -5,6 +5,8 @@ import Portal from "../Portal.vue";
 
 const workoutType = ["Push", "Pull", "Legs"];
 
+const emit = defineEmits(["goBack"]);
+
 const props = defineProps({
   data: Object,
   selectedWorkout: Number,
@@ -15,7 +17,7 @@ const props = defineProps({
 const { workout, warmup } = workoutProgram[props.selectedWorkout];
 let selectedExercise = ref(null);
 const exerciseDescription = computed(
-  () => exerciseDescriptions[selectedExercise.value]
+  () => exerciseDescriptions[selectedExercise.value],
 );
 
 function handleCloseModal() {
@@ -37,6 +39,7 @@ function handleCloseModal() {
     </div>
   </Portal>
   <section id="workout-card">
+    <button class="go-back-btn" @click="emit('goBack')">&larr;</button>
     <div class="plan-card card">
       <div class="plan-card-header">
         <p>
@@ -202,5 +205,9 @@ function handleCloseModal() {
 
 .exercise-description button i {
   padding-left: 0.5rem;
+}
+
+.go-back-btn {
+  padding: 0.25rem 0.5rem;
 }
 </style>
