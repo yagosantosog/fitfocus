@@ -118,6 +118,17 @@ function handleCloseModal() {
 </template>
 
 <style scoped>
+.workout-grid {
+  overflow-wrap: anywhere;
+}
+
+.workout-grid p,
+.workout-grid h4,
+.workout-grid h6 {
+  word-break: break-word;
+  hyphens: auto;
+}
+
 #workout-card,
 .plan-card {
   display: flex;
