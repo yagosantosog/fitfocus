@@ -43,7 +43,7 @@ const workoutTypes = ["Push", "Pull", "Legs"];
 <style scoped>
 #grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(min-content, 1fr));
   gap: 1rem;
 }
 
@@ -81,7 +81,7 @@ const workoutTypes = ["Push", "Pull", "Legs"];
 
 @media (min-width: 640px) {
   #grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(min-content, 1fr));
   }
 }
 </style>
