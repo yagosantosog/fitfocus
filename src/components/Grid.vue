@@ -43,7 +43,7 @@ const workoutTypes = ["Push", "Pull", "Legs"];
 <style scoped>
 #grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(min-content, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
 }
 
@@ -59,6 +59,13 @@ const workoutTypes = ["Push", "Pull", "Legs"];
 .plan-card {
   display: flex;
   flex-direction: column;
+}
+
+.plan-card h3 {
+  text-transform: capitalize;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .plan-card div {
@@ -77,11 +84,5 @@ const workoutTypes = ["Push", "Pull", "Legs"];
   align-items: center;
   justify-content: center;
   gap: 1rem;
-}
-
-@media (min-width: 640px) {
-  #grid {
-    grid-template-columns: repeat(4, minmax(min-content, 1fr));
-  }
 }
 </style>
